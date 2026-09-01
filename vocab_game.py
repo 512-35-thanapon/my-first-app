@@ -54,7 +54,7 @@ def show_result_dialog(ans1, ans2, ans3, ans4):
     # ✏️ [พื้นที่สำหรับนักเรียน]: เพิ่มตรวจข้อ 3, 4 ตรงนี้
     
     # ตรวจข้อ 3
-     if u_ans3 == "aura"
+     if u_ans3 == "aura":
         st.success("✅ ข้อ 3: ถูกต้อง")
         score += 1
     else:
@@ -106,7 +106,7 @@ ans3 = st.text_input(
 )
 ans4 = st.text_input(
     "ข้อ 4: What's the capital of france?",
-    value=st.session_state.ans3_val,
+    value=st.session_state.ans4_val,
 )
 
 # อัปเดตค่าล่าสุดเข้าตัวแปร
@@ -128,7 +128,7 @@ if "start" in st.session_state and not st.session_state.get("is_ended", False):
 
 # 5. แสดง Dialog ผลลัพธ์
 if st.session_state.get("is_ended", False):
-    show_result_dialog(ans1, ans2)
+    show_result_dialog(ans1, ans2, ans3, ans4)
 
 st.divider()
 st.write("นายธนพล ยะวัน เลขที่ 35 ม.4/12")
