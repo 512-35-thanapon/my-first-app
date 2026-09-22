@@ -76,20 +76,20 @@ def show_result_dialog(ans1, ans2, ans3, ans4):
         st.success("Probably could do better?")
         
     if score <= 1:
-        st.error("No worries, you tried your best!")
+        st.error("No worries, atleast you tried!")
 
 
 # ----------------------------------------------------
 # 1. ปุ่มเริ่มเล่นเกม
 # ----------------------------------------------------
-st.button("🎮 เริ่มเล่นเกม", on_click=reset_game)
+st.button("🎮 Play", on_click=reset_game)
 
 # 2. แถบแสดงเวลานับถอยหลัง
 if "start" in st.session_state and not st.session_state.get("is_ended", False):
     time_left = int(30 - (time.time() - st.session_state.start))
 
     if time_left > 0:
-        st.error(f"⏳ เหลือเวลา: {time_left} วินาที")
+        st.error(f"⏳ Time Left: {time_left} Seconds")
     else:
         st.session_state.is_ended = True
         st.rerun()
@@ -98,11 +98,11 @@ st.divider()
 
 # 3. ช่องรับคำตอบ (ใช้ value ผูกกับตัวแปรตรงๆ เพื่อสั่งเคลียร์ได้)
 ans1 = st.text_input(
-    "ข้อ 1: Smiling wide, full of joy and laughter - ‘ h _ p _ y ’",
+    "Question 1: Smiling wide, full of joy and laughter - ‘ h _ p _ y ’",
     value=st.session_state.ans1_val,
 )
 ans2 = st.text_input(
-    "ข้อ 2: Sitting in a room, missing the company - ‘ l _ n _ e _ y ’",
+    "Question 2: Sitting in a room, missing the company - ‘ l _ n _ e _ y ’",
     value=st.session_state.ans2_val,
 )
 
@@ -112,11 +112,11 @@ st.session_state.ans2_val = ans2
 
 # ✏️ [พื้นที่สำหรับนักเรียน]: เพิ่มข้อ 3, 4 ตรงนี้
 ans3 = st.text_input(
-    "ข้อ 3: Heart racing before a big adventure! - ‘ e x _ c _ _ _ d ’",
+    "Question 3: Heart racing before a big adventure! - ‘ e x _ c _ _ _ d ’",
     value=st.session_state.ans3_val,
 )
 ans4 = st.text_input(
-    "ข้อ 4: Listening with gentle without worries - ‘ p _ a _ e f _ l ’",
+    "Question 4: Listening with gentle without worries - ‘ p _ a _ e f _ l ’",
     value=st.session_state.ans4_val,
 )
 
