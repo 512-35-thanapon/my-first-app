@@ -38,38 +38,45 @@ def show_result_dialog(ans1, ans2, ans3, ans4):
     u_ans4 = ans4.strip().lower()
 
     # ตรวจข้อ 1
-    if u_ans1 == "apple":
-        st.success("✅ ข้อ 1: ถูกต้อง")
+    if u_ans1 == "happy":
+        st.success("✅ Question 1: Correct!")
         score += 1
     else:
-        st.error(f"❌ ข้อ 1: ยังไม่ถูกต้อง (คุณตอบ '{u_ans1}')")
+        st.error(f"❌ Question 1: Wrong! (You answered '{u_ans1}')")
 
     # ตรวจข้อ 2
-    if u_ans2 == "fish":
-        st.success("✅ ข้อ 2: ถูกต้อง")
+    if u_ans2 == "lonely":
+        st.success("✅ Question 2: Correct!")
         score += 1
     else:
-        st.error(f"❌ ข้อ 2: ยังไม่ถูกต้อง (คุณตอบ '{u_ans2}')")
+        st.error(f"❌ Question 2: Wrong! (You answered '{u_ans2}')")
 
     # ✏️ [พื้นที่สำหรับนักเรียน]: เพิ่มตรวจข้อ 3, 4 ตรงนี้
-    if u_ans3 == "pen":
-        st.success("✅ ข้อ 3: ถูกต้อง")
+    if u_ans3 == "excited":
+        st.success("✅ Question 3: Correct!")
         score += 1
     else:
-        st.error(f"❌ ข้อ 3: ยังไม่ถูกต้อง (คุณตอบ '{u_ans3}')")
+        st.error(f"❌ Question 3: Wrong! (You answered '{u_ans3}')")
 
-    if u_ans4 == "verity":
-        st.success("✅ ข้อ 4: ถูกต้อง")
+    if u_ans4 == "peaceful":
+        st.success("✅ Question 4: Correct!")
         score += 1
     else:
-        st.error(f"❌ ข้อ 4: ยังไม่ถูกต้อง (คุณตอบ '{u_ans4}')")
+        st.error(f"❌ Question 4: Wrong! (You answered '{u_ans4}')")
 
     st.info(f"🏆 ได้คะแนนรวม: {score} คะแนน")
 
     if score == 4:
-        st.success("🎉 You win!")
+        st.success("Your heart is full of feeling today!")
+    
+    if score == 3:
+        st.success("It’s okay, time to makes progress.")
+
+    if score == 2:
+        st.success("Probably could do better?")
+        
     else:
-        st.error("💀 You lose!")
+        st.error("No worries, you tried your best!")
 
 
 # ----------------------------------------------------
@@ -91,11 +98,11 @@ st.divider()
 
 # 3. ช่องรับคำตอบ (ใช้ value ผูกกับตัวแปรตรงๆ เพื่อสั่งเคลียร์ได้)
 ans1 = st.text_input(
-    "ข้อ 1: An `a _ _ l e` a day keeps the doctor away.",
+    "ข้อ 1: Smiling wide, full of joy and laughter - ‘ h _ p _ y ’",
     value=st.session_state.ans1_val,
 )
 ans2 = st.text_input(
-    "ข้อ 2: Cats love to eat `f _ s h`.",
+    "ข้อ 2: Sitting in a room, missing the company - ‘ l _ n _ e _ y ’",
     value=st.session_state.ans2_val,
 )
 
@@ -105,11 +112,11 @@ st.session_state.ans2_val = ans2
 
 # ✏️ [พื้นที่สำหรับนักเรียน]: เพิ่มข้อ 3, 4 ตรงนี้
 ans3 = st.text_input(
-    "ข้อ 3: Sell me this `p _ _`.",
+    "ข้อ 3: Heart racing before a big adventure! - ‘ e x _ c _ _ _ d ’",
     value=st.session_state.ans3_val,
 )
 ans4 = st.text_input(
-    "ข้อ 4: Hey, It's me. It's `v _ _ _ t y`.",
+    "ข้อ 4: Listening with gentle without worries - ‘ p _ a _ e f _ l ’",
     value=st.session_state.ans4_val,
 )
 
