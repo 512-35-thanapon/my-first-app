@@ -75,7 +75,7 @@ def show_result_dialog(ans1, ans2, ans3, ans4):
     if score == 2:
         st.success("Probably could do better?")
         
-    if score := 1:
+    if score <= 1:
         st.error("No worries, you tried your best!")
 
 
