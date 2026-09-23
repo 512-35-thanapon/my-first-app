@@ -64,7 +64,7 @@ def show_result_dialog(ans1, ans2, ans3, ans4):
     else:
         st.error(f"❌ Question 4: Wrong! (You answered '{u_ans4}')")
 
-    st.info(f"🏆 ได้คะแนนรวม: {score} คะแนน")
+    st.info(f"🏆 You got: {score}! ")
 
     if score == 4:
         st.success("Your heart is full of feeling today!")
