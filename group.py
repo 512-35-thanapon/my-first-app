@@ -27,7 +27,7 @@ def reset_game():
 # ----------------------------------------------------
 # 📌 ฟังก์ชัน MessageBox (Dialog)
 # ----------------------------------------------------
-@st.dialog("📊 สรุปผลการเล่นเกม")
+@st.dialog("📊 Insert answer")
 def show_result_dialog(ans1, ans2, ans3, ans4):
     st.balloons()
     score = 0
@@ -125,7 +125,7 @@ st.session_state.ans4_val = ans4
 
 # 4. ปุ่มส่งคำตอบ
 if "start" in st.session_state and not st.session_state.get("is_ended", False):
-    if st.button("📥 ส่งคำตอบ"):
+    if st.button("📥 Confirm answers"):
         st.session_state.is_ended = True
         st.rerun()
 
